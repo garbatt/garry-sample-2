@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Result</h1>
+    <p th:text="'input: ' + ${combinations.input}" />
+    <p th:text="'result ' + ${combinations.result}" />
+    <a href="/permutations">Submit for new permutation</a><p/>
+    <a href="/welcome">Main Home Page</a>
+</body>
+</html>
