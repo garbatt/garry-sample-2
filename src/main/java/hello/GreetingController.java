@@ -28,5 +28,26 @@ public class GreetingController {
         model.addAttribute("name", name);
         return "blessing";
     }
+    
+    @RequestMapping("/welcome")
+    public String welcome(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+        model.addAttribute("name", name);
+        return "welcome";
+    }
+    
+    @GetMapping("/permutations")
+    public String permutationsForm(Model model) {
+    	Combinations cmb = new Combinations();
+        model.addAttribute("combinations", cmb);
+        return "permutations";
+    }
+    
+    // http://localhost:8080/permutations
+    @PostMapping("/permutations")
+    public String permutationsSubmit(@ModelAttribute Combinations dog) {
+    	//permutations.startPermutation();
+    	dog.permute();
+        return "permresult";
+    }
 
 }
